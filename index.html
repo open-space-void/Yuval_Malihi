@@ -1,0 +1,932 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Yuval_Malihi</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-video-wrapper">
+    <video class="background-video" src="img/video_backround.mp4" autoplay loop muted playsinline></video>
+    <div class="background-video-overlay"></div>
+    <div class="video-fade-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:#000;opacity:0;pointer-events:none;transition:opacity 0.3s;z-index:2;"></div>
+    <header class="site-header">
+      <div class="logo-container">
+        <a href="#" class="logo">
+          <img src="img/logo.png" class="logo-img">
+        </a>
+      </div>
+      <nav class="main-nav" style="direction: ltr;">
+        <ul>
+          <li><a href="#contact" class="nav-green">Contact</a></li>
+          <li><a href="#personal-info" class="nav-green">About Me</a></li>
+          <li><a href="#gallery" class="nav-green">Gallery</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#" class="btn-primary" id="lang-toggle">EN/HE</a></li>
+        </ul>
+      </nav>
+      <div class="container">
+        <!-- other header content if any -->
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content container" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 60vh; text-align: center; margin-top: 20vh;">
+        <h1 style="font-size: 3.84rem; font-weight: bold; color: #fff; margin-bottom: 1.2rem;">Ignite Your Creativity</h1>
+        <a href="https://www.goodreads.com/quotes/37706-creativity-is-intelligence-having-fun" target="_blank" style="display:inline-block; font-size: 2rem; color: #7ed321; text-decoration: none; transition: transform 0.2s; margin-top: 0.5rem; font-weight: 600;"
+          onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+          "Creativity is intelligence having fun."
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <main>
+    <section id="videos" class="features" style="background: #000 !important; padding: 2.5rem 0 2.5rem 0; min-height: 400px; display: flex; align-items: center; position: relative;">
+      <div class="feature-slider feature-slider-bg" style="height: 400px; align-items: center; gap: 0; background: transparent !important; position: relative;">
+        <div class="slide slide-1" data-video-id="1vuXskHlm_g" style="background-image: url('https://img.youtube.com/vi/1vuXskHlm_g/hqdefault.jpg'); cursor: pointer; height: 100%; border-radius: 0; box-shadow: none;"></div>
+        <div class="slide slide-2" data-video-id="4-LAbVShIGY" style="background-image: url('https://img.youtube.com/vi/4-LAbVShIGY/hqdefault.jpg'); cursor: pointer; height: 100%; border-radius: 0; box-shadow: none;"></div>
+        <div class="slide slide-3" data-video-id="pCu3q_bxgqk" style="background-image: url('https://img.youtube.com/vi/pCu3q_bxgqk/hqdefault.jpg'); cursor: pointer; height: 100%; border-radius: 0; box-shadow: none;"></div>
+        <div class="slide slide-4" data-video-id="Q_2LR-__7jM" style="background-image: url('https://img.youtube.com/vi/Q_2LR-__7jM/hqdefault.jpg'); cursor: pointer; height: 100%; border-radius: 0; box-shadow: none;"></div>
+        <div class="slide slide-5" data-video-id="qbu-Q8u51cE" style="background-image: url('https://img.youtube.com/vi/qbu-Q8u51cE/hqdefault.jpg'); cursor: pointer; height: 100%; border-radius: 0; box-shadow: none;"></div>
+        <div class="slide slide-6" data-video-id="1vDLhf4pEJs" style="background-image: url('https://img.youtube.com/vi/1vDLhf4pEJs/hqdefault.jpg'); cursor: pointer; height: 100%; border-radius: 0; box-shadow: none;"></div>
+        <div class="slide slide-7" data-video-id="e7qtC_e8Jxc" style="background-image: url('https://img.youtube.com/vi/e7qtC_e8Jxc/hqdefault.jpg'); cursor: pointer; height: 100%; border-radius: 0; box-shadow: none;"></div>
+      </div>
+      <div class="features-fade-mask"></div>
+    </section>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="video-modal" style="display:none;">
+      <div class="video-modal-content" tabindex="-1">
+        <span id="video-modal-close" class="video-modal-close" tabindex="0" aria-label="Close video">&times;</span>
+        <div id="video-modal-player"></div>
+      </div>
+    </div>
+
+    <section id="gallery" class="gallery" style="background: #181820; padding: 4rem 0; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; direction: ltr;">
+      <div style="width: 100vw; max-width: 100vw; margin: 0 auto; padding: 0;">
+        <div class="gallery-slider gallery-slider-top gallery-fade-mask" style="width: 100vw; position: relative;">
+          <div class="gallery-row">
+            <div class="gallery-track gallery-track-animate-right">
+              <!-- 14 images, duplicated for seamless loop -->
+              <a href="img/gallery_1.jpg" target="_blank" rel="noopener"><img src="img/gallery_1.jpg" alt="Gallery 1"></a>
+              <a href="img/gallery_2.jpg" target="_blank" rel="noopener"><img src="img/gallery_2.jpg" alt="Gallery 2"></a>
+              <a href="img/gallery_3.jpg" target="_blank" rel="noopener"><img src="img/gallery_3.jpg" alt="Gallery 3"></a>
+              <a href="img/gallery_4.jpg" target="_blank" rel="noopener"><img src="img/gallery_4.jpg" alt="Gallery 4"></a>
+              <a href="img/gallery_5.jpg" target="_blank" rel="noopener"><img src="img/gallery_5.jpg" alt="Gallery 5"></a>
+              <a href="img/gallery_6.jpg" target="_blank" rel="noopener"><img src="img/gallery_6.jpg" alt="Gallery 6"></a>
+              <a href="img/gallery_7.jpg" target="_blank" rel="noopener"><img src="img/gallery_7.jpg" alt="Gallery 7"></a>
+              <a href="img/gallery_8.jpg" target="_blank" rel="noopener"><img src="img/gallery_8.jpg" alt="Gallery 8"></a>
+              <a href="img/gallery_9.jpg" target="_blank" rel="noopener"><img src="img/gallery_9.jpg" alt="Gallery 9"></a>
+              <a href="img/gallery_10.jpg" target="_blank" rel="noopener"><img src="img/gallery_10.jpg" alt="Gallery 10"></a>
+              <a href="img/gallery_11.jpg" target="_blank" rel="noopener"><img src="img/gallery_11.jpg" alt="Gallery 11"></a>
+              <a href="img/gallery_12.jpg" target="_blank" rel="noopener"><img src="img/gallery_12.jpg" alt="Gallery 12"></a>
+              <a href="img/gallery_13.jpg" target="_blank" rel="noopener"><img src="img/gallery_13.jpg" alt="Gallery 13"></a>
+              <a href="img/gallery_14.jpg" target="_blank" rel="noopener"><img src="img/gallery_14.jpg" alt="Gallery 14"></a>
+              <!-- duplicate -->
+              <a href="img/gallery_1.jpg" target="_blank" rel="noopener"><img src="img/gallery_1.jpg" alt="Gallery 1"></a>
+              <a href="img/gallery_2.jpg" target="_blank" rel="noopener"><img src="img/gallery_2.jpg" alt="Gallery 2"></a>
+              <a href="img/gallery_3.jpg" target="_blank" rel="noopener"><img src="img/gallery_3.jpg" alt="Gallery 3"></a>
+              <a href="img/gallery_4.jpg" target="_blank" rel="noopener"><img src="img/gallery_4.jpg" alt="Gallery 4"></a>
+              <a href="img/gallery_5.jpg" target="_blank" rel="noopener"><img src="img/gallery_5.jpg" alt="Gallery 5"></a>
+              <a href="img/gallery_6.jpg" target="_blank" rel="noopener"><img src="img/gallery_6.jpg" alt="Gallery 6"></a>
+              <a href="img/gallery_7.jpg" target="_blank" rel="noopener"><img src="img/gallery_7.jpg" alt="Gallery 7"></a>
+              <a href="img/gallery_8.jpg" target="_blank" rel="noopener"><img src="img/gallery_8.jpg" alt="Gallery 8"></a>
+              <a href="img/gallery_9.jpg" target="_blank" rel="noopener"><img src="img/gallery_9.jpg" alt="Gallery 9"></a>
+              <a href="img/gallery_10.jpg" target="_blank" rel="noopener"><img src="img/gallery_10.jpg" alt="Gallery 10"></a>
+              <a href="img/gallery_11.jpg" target="_blank" rel="noopener"><img src="img/gallery_11.jpg" alt="Gallery 11"></a>
+              <a href="img/gallery_12.jpg" target="_blank" rel="noopener"><img src="img/gallery_12.jpg" alt="Gallery 12"></a>
+              <a href="img/gallery_13.jpg" target="_blank" rel="noopener"><img src="img/gallery_13.jpg" alt="Gallery 13"></a>
+              <a href="img/gallery_14.jpg" target="_blank" rel="noopener"><img src="img/gallery_14.jpg" alt="Gallery 14"></a>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-slider gallery-slider-bottom gallery-fade-mask" style="width: 100vw; position: relative;">
+          <div class="gallery-row">
+            <div class="gallery-track gallery-track-animate-left">
+              <!-- 18 images, duplicated for seamless loop -->
+              <a href="img/gallery_15.jpg" target="_blank" rel="noopener"><img src="img/gallery_15.jpg" alt="Gallery 15"></a>
+              <a href="img/gallery_16.jpg" target="_blank" rel="noopener"><img src="img/gallery_16.jpg" alt="Gallery 16"></a>
+              <a href="img/gallery_17.jpg" target="_blank" rel="noopener"><img src="img/gallery_17.jpg" alt="Gallery 17"></a>
+              <a href="img/gallery_18.jpg" target="_blank" rel="noopener"><img src="img/gallery_18.jpg" alt="Gallery 18"></a>
+              <a href="img/gallery_19.jpg" target="_blank" rel="noopener"><img src="img/gallery_19.jpg" alt="Gallery 19"></a>
+              <a href="img/gallery_20.jpg" target="_blank" rel="noopener"><img src="img/gallery_20.jpg" alt="Gallery 20"></a>
+              <a href="img/gallery_21.jpg" target="_blank" rel="noopener"><img src="img/gallery_21.jpg" alt="Gallery 21"></a>
+              <a href="img/gallery_22.jpg" target="_blank" rel="noopener"><img src="img/gallery_22.jpg" alt="Gallery 22"></a>
+              <a href="img/gallery_23.jpg" target="_blank" rel="noopener"><img src="img/gallery_23.jpg" alt="Gallery 23"></a>
+              <a href="img/gallery_24.jpg" target="_blank" rel="noopener"><img src="img/gallery_24.jpg" alt="Gallery 24"></a>
+              <a href="img/gallery_25.jpg" target="_blank" rel="noopener"><img src="img/gallery_25.jpg" alt="Gallery 25"></a>
+              <a href="img/gallery_26.jpg" target="_blank" rel="noopener"><img src="img/gallery_26.jpg" alt="Gallery 26"></a>
+              <a href="img/gallery_27.jpg" target="_blank" rel="noopener"><img src="img/gallery_27.jpg" alt="Gallery 27"></a>
+              <a href="img/gallery_28.jpg" target="_blank" rel="noopener"><img src="img/gallery_28.jpg" alt="Gallery 28"></a>
+              <a href="img/gallery_29.jpg" target="_blank" rel="noopener"><img src="img/gallery_29.jpg" alt="Gallery 29"></a>
+              <a href="img/gallery_30.jpg" target="_blank" rel="noopener"><img src="img/gallery_30.jpg" alt="Gallery 30"></a>
+              <a href="img/gallery_31.jpg" target="_blank" rel="noopener"><img src="img/gallery_31.jpg" alt="Gallery 31"></a>
+              <a href="img/gallery_32.jpg" target="_blank" rel="noopener"><img src="img/gallery_32.jpg" alt="Gallery 32"></a>
+              <!-- duplicate -->
+              <a href="img/gallery_15.jpg" target="_blank" rel="noopener"><img src="img/gallery_15.jpg" alt="Gallery 15"></a>
+              <a href="img/gallery_16.jpg" target="_blank" rel="noopener"><img src="img/gallery_16.jpg" alt="Gallery 16"></a>
+              <a href="img/gallery_17.jpg" target="_blank" rel="noopener"><img src="img/gallery_17.jpg" alt="Gallery 17"></a>
+              <a href="img/gallery_18.jpg" target="_blank" rel="noopener"><img src="img/gallery_18.jpg" alt="Gallery 18"></a>
+              <a href="img/gallery_19.jpg" target="_blank" rel="noopener"><img src="img/gallery_19.jpg" alt="Gallery 19"></a>
+              <a href="img/gallery_20.jpg" target="_blank" rel="noopener"><img src="img/gallery_20.jpg" alt="Gallery 20"></a>
+              <a href="img/gallery_21.jpg" target="_blank" rel="noopener"><img src="img/gallery_21.jpg" alt="Gallery 21"></a>
+              <a href="img/gallery_22.jpg" target="_blank" rel="noopener"><img src="img/gallery_22.jpg" alt="Gallery 22"></a>
+              <a href="img/gallery_23.jpg" target="_blank" rel="noopener"><img src="img/gallery_23.jpg" alt="Gallery 23"></a>
+              <a href="img/gallery_24.jpg" target="_blank" rel="noopener"><img src="img/gallery_24.jpg" alt="Gallery 24"></a>
+              <a href="img/gallery_25.jpg" target="_blank" rel="noopener"><img src="img/gallery_25.jpg" alt="Gallery 25"></a>
+              <a href="img/gallery_26.jpg" target="_blank" rel="noopener"><img src="img/gallery_26.jpg" alt="Gallery 26"></a>
+              <a href="img/gallery_27.jpg" target="_blank" rel="noopener"><img src="img/gallery_27.jpg" alt="Gallery 27"></a>
+              <a href="img/gallery_28.jpg" target="_blank" rel="noopener"><img src="img/gallery_28.jpg" alt="Gallery 28"></a>
+              <a href="img/gallery_29.jpg" target="_blank" rel="noopener"><img src="img/gallery_29.jpg" alt="Gallery 29"></a>
+              <a href="img/gallery_30.jpg" target="_blank" rel="noopener"><img src="img/gallery_30.jpg" alt="Gallery 30"></a>
+              <a href="img/gallery_31.jpg" target="_blank" rel="noopener"><img src="img/gallery_31.jpg" alt="Gallery 31"></a>
+              <a href="img/gallery_32.jpg" target="_blank" rel="noopener"><img src="img/gallery_32.jpg" alt="Gallery 32"></a>
+            </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .gallery {
+        background: #181820;
+        padding: 4rem 0;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+      }
+      .gallery-slider {
+        overflow: visible;
+        width: 100vw;
+        margin-bottom: 0rem;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        position: relative;
+      }
+      .gallery-row {
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        overflow: visible;
+      }
+      .gallery-track {
+        display: flex;
+        width: max-content;
+        gap: 1rem;
+        overflow: visible;
+      }
+      .gallery-track a {
+        display: block;
+        height: 100%;
+      }
+      .gallery-track img {
+        height: 180px;
+        width: auto;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        background: #222;
+        user-select: none;
+        pointer-events: auto;
+        transition: opacity 0.5s, transform 0.25s cubic-bezier(.4,1.5,.5,1), box-shadow 0.2s;
+      }
+      .gallery-track img:hover {
+        transform: scale(1.08);
+        z-index: 3;
+        box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+        cursor: pointer;
+        border-radius: 8px;
+      }
+      .gallery-track-animate-right {
+        animation: gallery-slide-right 120s linear infinite;
+      }
+      .gallery-track-animate-left {
+        animation: gallery-slide-left 120s linear infinite;
+      }
+      @keyframes gallery-slide-right {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      @keyframes gallery-slide-left {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+      }
+      .gallery-fade-mask::before,
+      .gallery-fade-mask::after {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0;
+        width: 80px;
+        z-index: 2;
+        pointer-events: none;
+      }
+      .gallery-fade-mask::before {
+        left: 0;
+        background: linear-gradient(to right, #181820 60%, rgba(24,24,32,0.7) 80%, transparent 100%);
+      }
+      .gallery-fade-mask::after {
+        right: 0;
+        background: linear-gradient(to left, #181820 60%, rgba(24,24,32,0.7) 80%, transparent 100%);
+      }
+      @media (max-width: 900px) {
+        .gallery-track img { height: 120px; }
+        .gallery-fade-mask::before, .gallery-fade-mask::after { width: 40px; }
+      }
+      @media (max-width: 600px) {
+        .gallery-track img { height: 80px; }
+        .gallery-fade-mask::before, .gallery-fade-mask::after { width: 20px; }
+      }
+      .feature-slider-bg {
+        position: relative;
+        z-index: 1;
+      }
+      .slider-fade-left, .slider-fade-right {
+        position: absolute;
+        top: 0;
+        width: 24px;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1000;
+      }
+      .slider-fade-left {
+        left: 0;
+        background: linear-gradient(to right, #000 30%, rgba(0,0,0,0.7) 60%, transparent 100%);
+      }
+      .slider-fade-right {
+        right: 0;
+        background: linear-gradient(to left, #000 30%, rgba(0,0,0,0.7) 60%, transparent 100%);
+      }
+      @media (max-width: 900px) {
+        .slider-fade-left, .slider-fade-right { width: 12px; }
+      }
+      @media (max-width: 600px) {
+        .slider-fade-left, .slider-fade-right { width: 6px; }
+      }
+      .features {
+        position: relative;
+      }
+      .features-fade-mask {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        width: 100%; height: 100%;
+        pointer-events: none;
+        z-index: 1000;
+      }
+      .features-fade-mask::before,
+      .features-fade-mask::after {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0;
+        width: 45px;
+        z-index: 1001;
+      }
+      .features-fade-mask::before {
+        left: 0;
+        background: linear-gradient(to right, #000 30%, rgba(0,0,0,0.7) 60%, transparent 100%);
+      }
+      .features-fade-mask::after {
+        right: 0;
+        background: linear-gradient(to left, #000 30%, rgba(0,0,0,0.7) 60%, transparent 100%);
+      }
+      @media (max-width: 900px) {
+        .features-fade-mask::before, .features-fade-mask::after { width: 22px; }
+      }
+      @media (max-width: 600px) {
+        .features-fade-mask::before, .features-fade-mask::after { width: 11px; }
+      }
+      .game-section {
+        background: #181820;
+        padding: 3rem 0 3rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 220px;
+      }
+      .game-container {
+        width: 100vw;
+        max-width: 100vw;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #game-play-btn {
+        padding: 0.7rem 2.2rem;
+        font-size: 1.3rem;
+        border-radius: 8px;
+        border: none;
+        background: #7ed321;
+        color: #222;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      #game-play-btn:hover {
+        background: #a6e85c;
+      }
+      .game-world {
+        position: relative;
+        width: 100%;
+        height: 320px;
+        background: #222;
+        overflow: hidden;
+      }
+      .game-track {
+        position: relative;
+        display: flex;
+        overflow: visible;
+        left: 0;
+        top: 0;
+        height: 100%;
+        align-items: flex-end;
+        z-index: 1;
+      }
+      .game-block {
+        width: 80px;
+        height: 80px;
+        background-size: cover;
+        flex-shrink: 0;
+      }
+      .game-character {
+        position: absolute;
+        left: 8px;
+        bottom: 0;
+        width: 40px;
+        height: 40px;
+        z-index: 100;
+        background: url('img/game_logo.png') center center/contain no-repeat;
+        pointer-events: none;
+        transition: filter 0.2s, transform 0.15s cubic-bezier(.4,1.5,.5,1);
+      }
+      @media (max-width: 600px) {
+        .game-block { width: 48px; height: 48px; }
+        .game-character { width: 24px; height: 24px; }
+      }
+      .game-obstacle {
+        position: absolute;
+        width: 80px; /* will be overridden inline */
+        height: 80px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        z-index: 10;
+        background-color: red; /* for debugging */
+        opacity: 1 !important;
+      }
+      .personal-images-wrapper {
+        position: relative;
+        width: 260px;
+        height: 260px;
+      }
+      .personal-image {
+        position: absolute;
+        width: 180px;
+        aspect-ratio: 1200/1446;
+        height: auto;
+        border-radius: 18px;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+        transition: box-shadow 0.3s, left 1s cubic-bezier(.77,0,.18,1), top 1s cubic-bezier(.77,0,.18,1), transform 1s cubic-bezier(.77,0,.18,1), z-index 0s;
+      }
+      .personal-image-1 {
+        background-image: url('img/personal_1.jpg');
+        z-index: 2;
+      }
+      .personal-image-2 {
+        background-image: url('img/personal_2.jpg');
+        z-index: 1;
+      }
+      .personal-image-1.front {
+        left: 0; top: 40px; transform: scale(1.15); z-index: 3;
+      }
+      .personal-image-1.back {
+        left: 120px; top: 40px; transform: scale(0.85); z-index: 1;
+      }
+      .personal-image-2.front {
+        left: 0; top: 40px; transform: scale(1.15); z-index: 3;
+      }
+      .personal-image-2.back {
+        left: 120px; top: 40px; transform: scale(0.85); z-index: 1;
+      }
+      .video-fade-overlay {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: #000;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.7s;
+        z-index: 2;
+      }
+    </style>
+  </main>
+  <button id="scrollToTopBtn" style="display:none; position:fixed; bottom:32px; right:32px; z-index:9999; background:#7ed321; color:#222; border:none; border-radius:50%; width:56px; height:56px; font-size:2rem; font-weight:bold; box-shadow:0 2px 12px rgba(0,0,0,0.18); cursor:pointer; transition:background 0.2s, transform 0.2s;">↑</button>
+
+  <!-- Personal Information Section (between gallery and contact) -->
+  <section id="personal-info" class="personal-info-section" style="background: #23232c; padding: 3rem 0; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;">
+    <div style="max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem;">
+      <style>
+        @media (min-width: 700px) {
+          .personal-info-section .personal-images-wrapper {
+            margin-left: 80px !important;
+          }
+        }
+        @media (max-width: 699px) {
+          .personal-info-section .personal-images-wrapper {
+            margin-left: 20px !important;
+          }
+        }
+      </style>
+      <!-- Left: Placeholder for text input -->
+      <div style="flex: 1; min-width: 220px; color: #fff;">
+        <div id="personal-info-text" style="background: #23232c; border-radius: 10px; min-height: 120px; display: flex; align-items: flex-start; justify-content: flex-start; font-size: 1.1rem; color: #aaa; text-align: left; padding: 1.2rem;">
+          <div style="width:100%;">
+            <h3 style="color:#7ed321; margin-bottom:0.5rem;">About Me</h3>
+            <div style="font-weight:bold; color:#fff;">Yuval Malihi – Israel</div>
+            <div style="margin:0.5rem 0 1rem 0;">I enjoy creating innovative solutions to real-world problems.</div>
+            <div style="margin-bottom:0.5rem;"><b>Current Role:</b> Network Administrator at JCT Lev Academic Center <span style="color:#888;">(September 2023 – present)</span></div>
+            <div style="margin-bottom:0.5rem;"><b>Air Force:</b> Served as Network and Systems Manager in the Israeli Air Force, leading network design, maintenance, and security <span style="color:#888;">(April 2018 – October 2020)</span></div>
+            <div style="margin:1rem 0 0.5rem 0;"><b>Skills:</b></div>
+            <ul style="margin:0 0 0 1.2rem; padding:0; color:#fff;">
+              <li>Python</li>
+              <li>IT Support &amp; Infrastructure</li>
+              <li>Digital Illustration</li>
+              <li>
+                <span>MCSA (Windows Server 2016) – </span>
+                <a href="https://www.credly.com/badges/b0dc0f33-ea5b-4780-b4ec-63119c8ac2ea/linked_in_profile" target="_blank" style="color:#7ed321; text-decoration:underline;">View Certification</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Right: Rotating images -->
+      <div class="personal-images-wrapper" style="flex: 1; min-width: 220px; display: flex; align-items: center; justify-content: center; position: relative; height: 260px;">
+        <div class="personal-image personal-image-1"></div>
+        <div class="personal-image personal-image-2"></div>
+        <!-- gap is now handled by CSS above -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (between gallery and footer) -->
+  <section id="contact" class="contact-section" style="background: #181820; padding: 3rem 0; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;">
+    <div style="max-width: 400px; margin: 0 auto; background: #222; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.18); color: #fff;">
+      <h2 style="text-align:center; margin-bottom: 1.5rem;">Contact Us</h2>
+      <form id="contact-form" style="display: flex; flex-direction: column; gap: 1rem;">
+        <label for="contact-name">Full Name</label>
+        <input type="text" id="contact-name" name="name" required style="padding: 0.5rem; border-radius: 6px; border: none;">
+        <label for="contact-number">Number</label>
+        <input type="tel" id="contact-number" name="number" required style="padding: 0.5rem; border-radius: 6px; border: none;">
+        <label for="contact-info">Additional Information (optional)</label>
+        <textarea id="contact-info" name="info" rows="3" style="padding: 0.5rem; border-radius: 6px; border: none;"></textarea>
+        <button type="submit" style="background: #7ed321; color: #222; border: none; border-radius: 6px; padding: 0.75rem; font-size: 1.1rem; font-weight: bold; cursor: pointer; margin-top: 1rem;">Send</button>
+        <div id="contact-confirm" style="display:none; color:#7ed321; text-align:center; margin-top:1rem; font-weight:bold;">Message sent! Thank you.</div>
+      </form>
+      </div>
+    </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Yuval Malihi. All rights reserved.</p>
+      <ul class="footer-nav">
+        <li><a href="mailto:yuvalmalihi@gmail.com" style="color: #7ed321; text-decoration: underline;">yuvalmalihi@gmail.com</a></li>
+      </ul>
+    </div>
+  </footer>
+  <style>
+    .video-modal {
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .video-modal-content {
+      background: #111;
+      padding: 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.5);
+      position: relative;
+      max-width: 90vw;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .video-modal-close {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px 20px 0 0;
+      z-index: 10;
+      background: none;
+      border: none;
+      outline: none;
+      transition: color 0.2s;
+    }
+    .video-modal-close:hover, .video-modal-close:focus {
+      color: #ff5252;
+    }
+    #video-modal-player iframe {
+      display: block;
+      border-radius: 8px;
+      max-width: 80vw;
+      max-height: 60vh;
+      width: 60vw;
+      height: 34vw;
+      min-width: 320px;
+      min-height: 180px;
+      background: #000;
+    }
+    @media (max-width: 600px) {
+      #video-modal-player iframe {
+        width: 90vw;
+        height: 50vw;
+      }
+    }
+    .youtube-thumb {
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    .youtube-thumb:hover {
+      transform: scale(1.04);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+    .feature-slider-bg, .feature-slider { background: transparent !important; }
+    .slide {
+      background-size: cover !important;
+      background-color: #000 !important;
+      margin: 0 !important;
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  </style>
+  <script>
+    // Enable mouse drag to scroll the feature slider
+    const slider = document.querySelector('.feature-slider');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let sliderLocked = false; // Add lock flag
+    if (slider) {
+      slider.addEventListener('mousedown', (e) => {
+        if (sliderLocked) return;
+        isDown = true;
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+      slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+      slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+      slider.addEventListener('mousemove', (e) => {
+        if (!isDown || sliderLocked) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1.2; // scroll-fast
+        slider.scrollLeft = scrollLeft - walk;
+      });
+    }
+
+    // Video modal logic for slider slides
+    const sliderSlides = document.querySelectorAll('.feature-slider .slide');
+    const videoModal = document.getElementById('video-modal');
+    const videoModalPlayer = document.getElementById('video-modal-player');
+    const videoModalClose = document.getElementById('video-modal-close');
+    const videoModalContent = document.querySelector('.video-modal-content');
+    function openVideoModal(videoId) {
+      sliderLocked = true;
+      if (videoModal && videoModalPlayer) {
+        videoModal.style.display = 'flex';
+        videoModalPlayer.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+        setTimeout(() => {
+          videoModalContent && videoModalContent.focus();
+        }, 100);
+      }
+      document.body.style.overflow = 'hidden';
+    }
+    function closeVideoModal() {
+      sliderLocked = false;
+      if (videoModal && videoModalPlayer) {
+        videoModal.style.display = 'none';
+        videoModalPlayer.innerHTML = '';
+      }
+      document.body.style.overflow = '';
+    }
+    sliderSlides.forEach(slide => {
+      slide.addEventListener('click', function(e) {
+        e.preventDefault();
+        const videoId = this.getAttribute('data-video-id');
+        openVideoModal(videoId);
+      });
+    });
+    if (videoModalClose) {
+      videoModalClose.addEventListener('click', closeVideoModal);
+      videoModalClose.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') closeVideoModal();
+      });
+    }
+    // Close modal on outside click
+    if (videoModal) {
+      videoModal.addEventListener('click', function(e) {
+        if (e.target === videoModal) closeVideoModal();
+      });
+    }
+    // Close modal on ESC key
+    document.addEventListener('keydown', function(e) {
+      if (videoModal.style.display !== 'none' && (e.key === 'Escape' || e.key === 'Esc')) {
+        closeVideoModal();
+      }
+    });
+  </script>
+  <script>
+    // Mousemove-based glide for feature slider
+    const sliderBg = document.querySelector('.feature-slider-bg');
+    if (sliderBg) {
+      sliderBg.addEventListener('mousemove', (e) => {
+        const rect = sliderBg.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const percent = mouseX / rect.width;
+        const maxScroll = sliderBg.scrollWidth - sliderBg.clientWidth;
+        sliderBg.scrollLeft = maxScroll * percent;
+      });
+    }
+  </script>
+  <script>
+    // Pause animation on hover
+    document.querySelectorAll('.gallery-track').forEach(track => {
+      track.addEventListener('mouseover', function(e) {
+        if (e.target.tagName === 'IMG') {
+          track.style.animationPlayState = 'paused';
+        }
+      });
+      track.addEventListener('mouseout', function(e) {
+        if (e.target.tagName === 'IMG') {
+          track.style.animationPlayState = '';
+        }
+      });
+    });
+    // EN/HE Translator Logic
+    const translations = {
+      en: {
+        nav: ["Contact", "About Me", "Gallery", "Videos", "EN/HE"],
+        heroTitle: "Ignite Your Creativity",
+        heroQuote: '"Creativity is intelligence having fun."',
+        heroQuoteUrl: "https://www.goodreads.com/quotes/37706-creativity-is-intelligence-having-fun",
+        personalAbout: "About Me",
+        personalName: "Yuval Malihi – Israel",
+        personalSummary: "I enjoy creating innovative solutions to real-world problems.",
+        personalCurrent: "Current Role:",
+        personalCurrentDesc: "Network Administrator at JCT Lev Academic Center ",
+        personalCurrentDates: "(September 2023 – present)",
+        personalAirforce: "Air Force:",
+        personalAirforceDesc: "Served as Network and Systems Manager in the Israeli Air Force, leading network design, maintenance, and security ",
+        personalAirforceDates: "(April 2018 – October 2020)",
+        personalSkills: "Skills:",
+        personalSkillList: [
+          "Python",
+          "IT Support & Infrastructure",
+          "Digital Illustration",
+          '<span>MCSA (Windows Server 2016) – </span><a href="https://www.credly.com/badges/b0dc0f33-ea5b-4780-b4ec-63119c8ac2ea/linked_in_profile" target="_blank" style="color:#7ed321; text-decoration:underline;">View Certification</a>'
+        ],
+        contactTitle: "Contact Us",
+        contactName: "Full Name",
+        contactNumber: "Number",
+        contactInfo: "Additional Information (optional)",
+        contactSend: "Send",
+        contactConfirm: "Message sent! Thank you.",
+        footer: "© Yuval Malihi. All rights reserved.",
+        footerMail: "yuvalmalihi@gmail.com"
+      },
+      he: {
+        nav: ["צור קשר", "עליי", "גלריה", "סרטונים", "HE/EN"],
+        heroTitle: "הדליקו את היצירתיות שלכם",
+        heroQuote: '"יצירתיות היא אינטליגנציה שנהנית."',
+        heroQuoteUrl: "https://www.goodreads.com/quotes/37706-creativity-is-intelligence-having-fun",
+        personalAbout: "עליי",
+        personalName: "יובל מליחי – ישראל",
+        personalSummary: "אני נהנה ליצור פתרונות חדשניים לבעיות מהעולם האמיתי.",
+        personalCurrent: "תפקיד נוכחי:",
+        personalCurrentDesc: "מנהל רשת במרכז האקדמי לב ",
+        personalCurrentDates: "(ספטמבר 2023 – היום)",
+        personalAirforce: "חיל האוויר:",
+        personalAirforceDesc: "ניהול רשתות ומערכות בחיל האוויר, כולל תכנון, תחזוקה ואבטחת רשתות ",
+        personalAirforceDates: "(אפריל 2018 – אוקטובר 2020)",
+        personalSkills: "כישורים:",
+        personalSkillList: [
+          "פייתון",
+          "תמיכה טכנית ותשתיות IT",
+          "איור דיגיטלי",
+          '<span>MCSA (Windows Server 2016) – </span><a href="https://www.credly.com/badges/b0dc0f33-ea5b-4780-b4ec-63119c8ac2ea/linked_in_profile" target="_blank" style="color:#7ed321; text-decoration:underline;">הצג הסמכה</a>'
+        ],
+        contactTitle: "צור קשר",
+        contactName: "שם מלא",
+        contactNumber: "מספר טלפון",
+        contactInfo: "מידע נוסף (לא חובה)",
+        contactSend: "שלח",
+        contactConfirm: "ההודעה נשלחה! תודה.",
+        footer: "© יובל מליחי. כל הזכויות שמורות.",
+        footerMail: "yuvalmalihi@gmail.com"
+      }
+    };
+    let isHebrew = false;
+    const langToggle = document.getElementById('lang-toggle');
+    function updateLanguage() {
+      const lang = isHebrew ? 'he' : 'en';
+      // Nav
+      const navLinks = document.querySelectorAll('.main-nav a');
+      navLinks[0].textContent = translations[lang].nav[0];
+      navLinks[1].textContent = translations[lang].nav[1];
+      navLinks[2].textContent = translations[lang].nav[2];
+      navLinks[3].textContent = translations[lang].nav[3];
+      langToggle.textContent = translations[lang].nav[4];
+      // Keep nav LTR for both languages
+      document.querySelector('.main-nav').style.direction = 'ltr';
+      // Keep gallery LTR for both languages
+      document.getElementById('gallery').style.direction = 'ltr';
+      // Hero
+      const heroTitle = document.querySelector('.hero h1');
+      const heroQuote = document.querySelector('.hero a');
+      if (heroTitle) heroTitle.textContent = translations[lang].heroTitle;
+      if (heroQuote) {
+        heroQuote.innerHTML = translations[lang].heroQuote;
+        heroQuote.href = translations[lang].heroQuoteUrl;
+      }
+      // Personal Info
+      const personalText = document.getElementById('personal-info-text');
+      if (personalText) {
+        const align = lang === 'he' ? 'right' : 'left';
+        personalText.innerHTML = `
+          <div style=\"width:100%; text-align:${align};\">
+            <h3 style=\"color:#7ed321; margin-bottom:0.5rem;\">${translations[lang].personalAbout}</h3>
+            <div style=\"font-weight:bold; color:#fff;\">${translations[lang].personalName}</div>
+            <div style=\"margin:0.5rem 0 1rem 0;\">${translations[lang].personalSummary}</div>
+            <div style=\"margin-bottom:0.5rem;\"><b>${translations[lang].personalCurrent}</b> ${translations[lang].personalCurrentDesc} <span style=\"color:#888;\">${translations[lang].personalCurrentDates}</span></div>
+            <div style=\"margin-bottom:0.5rem;\"><b>${translations[lang].personalAirforce}</b> ${translations[lang].personalAirforceDesc} <span style=\"color:#888;\">${translations[lang].personalAirforceDates}</span></div>
+            <div style=\"margin:1rem 0 0.5rem 0;\"><b>${translations[lang].personalSkills}</b></div>
+            <ul style=\"margin:0 0 0 1.2rem; padding:0; color:#fff;\">
+              <li>${translations[lang].personalSkillList[0]}</li>
+              <li>${translations[lang].personalSkillList[1]}</li>
+              <li>${translations[lang].personalSkillList[2]}</li>
+              <li>${translations[lang].personalSkillList[3]}</li>
+            </ul>
+          </div>
+        `;
+      }
+      // Contact
+      const contactTitle = document.querySelector('.contact-section h2');
+      const contactLabels = document.querySelectorAll('#contact-form label');
+      const contactInputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
+      const contactBtn = document.querySelector('#contact-form button');
+      const contactConfirm = document.getElementById('contact-confirm');
+      if (contactTitle) contactTitle.textContent = translations[lang].contactTitle;
+      if (contactLabels.length >= 3) {
+        contactLabels[0].textContent = translations[lang].contactName;
+        contactLabels[1].textContent = translations[lang].contactNumber;
+        contactLabels[2].textContent = translations[lang].contactInfo;
+      }
+      if (contactInputs.length >= 2) {
+        contactInputs[0].placeholder = translations[lang].contactName;
+        contactInputs[1].placeholder = translations[lang].contactNumber;
+      }
+      if (contactBtn) contactBtn.textContent = translations[lang].contactSend;
+      if (contactConfirm) contactConfirm.textContent = translations[lang].contactConfirm;
+      // Footer
+      const footer = document.querySelector('.site-footer p');
+      const footerMail = document.querySelector('.footer-nav a');
+      if (footer) footer.textContent = translations[lang].footer;
+      if (footerMail) footerMail.textContent = translations[lang].footerMail;
+      // Direction for Hebrew
+      document.body.dir = isHebrew ? 'rtl' : 'ltr';
+    }
+    langToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      isHebrew = !isHebrew;
+      updateLanguage();
+    });
+    // Set initial language
+    updateLanguage();
+  </script>
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+  <script>
+    // Contact form logic
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('contact-name').value;
+        const number = document.getElementById('contact-number').value;
+        const info = document.getElementById('contact-info').value;
+        // Compose mailto link
+        const subject = encodeURIComponent('Contact Form Submission');
+        const body = encodeURIComponent(`Full Name: ${name}\nNumber: ${number}\nAdditional Info: ${info}`);
+        window.location.href = `mailto:yuvalmalihi@gmail.com?subject=${subject}&body=${body}`;
+        // Show confirmation message
+        document.getElementById('contact-confirm').style.display = 'block';
+        // Optionally clear form
+        contactForm.reset();
+        setTimeout(() => {
+          document.getElementById('contact-confirm').style.display = 'none';
+        }, 4000);
+      });
+    }
+  </script>
+  <script>
+    // Personal images swap logic
+    const img1 = document.querySelector('.personal-image-1');
+    const img2 = document.querySelector('.personal-image-2');
+    if (img1 && img2) {
+      function setFrontBack(front1) {
+        if (front1) {
+          img1.classList.add('front'); img1.classList.remove('back');
+          img2.classList.add('back');  img2.classList.remove('front');
+        } else {
+          img1.classList.add('back');  img1.classList.remove('front');
+          img2.classList.add('front'); img2.classList.remove('back');
+        }
+      }
+      let front1 = true;
+      setFrontBack(front1);
+      setInterval(() => {
+        front1 = !front1;
+        setFrontBack(front1);
+      }, 30000); // 30 seconds
+    }
+  </script>
+  <script>
+    // Seamless video fade overlay logic
+    const bgVideo = document.querySelector('.background-video');
+    const fadeOverlay = document.querySelector('.video-fade-overlay');
+    if (bgVideo && fadeOverlay) {
+      let faded = false;
+      bgVideo.addEventListener('timeupdate', function() {
+        if (bgVideo.duration && bgVideo.currentTime > bgVideo.duration - 0.7) {
+          fadeOverlay.style.opacity = '0.7';
+          faded = true;
+        } else if (faded && bgVideo.currentTime < 0.5) {
+          fadeOverlay.style.opacity = '0';
+          faded = false;
+        }
+      });
+      // Also fade out on play (in case of manual restart)
+      bgVideo.addEventListener('play', function() {
+        fadeOverlay.style.opacity = '0';
+        faded = false;
+      });
+    }
+  </script>
+  <script>
+    // Scroll-to-top button logic
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 40) {
+        scrollToTopBtn.style.display = 'block';
+      } else {
+        scrollToTopBtn.style.display = 'none';
+      }
+    });
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

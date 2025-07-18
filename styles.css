@@ -204,10 +204,10 @@ body, h1, h2, h3, h4, h5, h6 {
   padding: 4rem 0;
   overflow-x: hidden;
   box-sizing: border-box;
-  width: 100vw !important;
-  margin-left: calc(50% - 50vw) !important;
-  left: 0 !important;
-  right: 0 !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  left: auto !important;
+  right: auto !important;
   margin-top: 2rem !important;
 }
 .gallery-row, .gallery-track {
@@ -377,6 +377,7 @@ html, body {
   background: #181820 !important;
   margin: 0;
   padding: 0;
+  overflow-x: hidden !important;
 }
 
 @media (max-width: 700px) {
@@ -428,4 +429,9 @@ html, body {
     max-width: 100%;
     height: auto !important;
   }
+}
+
+#gallery, .gallery, .gallery-row, .gallery-track {
+  direction: ltr !important;
+  text-align: left !important;
 }

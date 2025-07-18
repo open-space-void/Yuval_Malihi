@@ -177,6 +177,30 @@
         </div>
       </div>
     </section>
+    <!-- New Creativity & Art Section -->
+    <section id="creativity-art" style="background: #20202a; padding: 3rem 0; width: 100%; max-width: 100vw; position: relative;">
+      <div class="creativity-art-flex creativity-art-container" style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 2.5rem; min-height: 340px; padding-left: 1.2rem; padding-right: 1.2rem;">
+        <!-- Left: Text -->
+        <div style="flex: 1 1 260px; min-width: 220px; color: #fff; display: flex; flex-direction: column; justify-content: center;">
+          <h3 style="color:#7ed321; margin-bottom:0.7rem;">Creativity & Art</h3>
+          <p style="font-size:1.1rem; color:#aaa; margin-bottom:1.2rem;">My passion for creativity began with my love for drawing. Art has always been a way for me to express new ideas and see the world differently. This creative drive naturally led me to explore new horizons, whether through digital illustration or building innovative solutions in technology.</p>
+          <p style="font-size:1.1rem; color:#aaa; margin-bottom:1.2rem;">Today, I channel that same creativity into coding and automation. I'm currently working on a project that automates actions on both Windows and Linux, making everyday tasks more efficient and freeing up time for more creative pursuits.</p>
+        </div>
+        <!-- Right: Art and Project Images -->
+        <div class="creativity-art-images" style="flex: 1 1 320px; min-width: 220px; display: flex; flex-direction: column; gap: 1.2rem; align-items: center;">
+          <a href="img/my_art_1.jpg" target="_blank" class="creativity-art-img-link">
+            <img src="img/my_art_1.jpg" alt="My Art 1" class="creativity-art-img">
+          </a>
+          <a href="img/my_art_2.jpg" target="_blank" class="creativity-art-img-link">
+            <img src="img/my_art_2.jpg" alt="My Art 2" class="creativity-art-img">
+          </a>
+          <a href="img/project_1.png" target="_blank" class="creativity-art-img-link creativity-art-project-link" style="position:relative;">
+            <img src="img/project_1.png" alt="Automation Project Screenshot" class="creativity-art-img">
+            <span class="creativity-art-project-label">My Project</span>
+          </a>
+        </div>
+      </div>
+    </section>
     <style>
       .gallery {
         background: #181820;
@@ -452,6 +476,79 @@
         pointer-events: none;
         transition: opacity 0.7s;
         z-index: 2;
+      }
+      .creativity-art-images {
+        width: 100%;
+      }
+      .creativity-art-img-link {
+        display: block;
+        width: 100%;
+        max-width: 220px;
+        border-radius: 10px;
+        overflow: visible;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        background: #222;
+        transition: box-shadow 0.2s, transform 0.2s, z-index 0.2s;
+        margin: 0 auto;
+        position: relative;
+      }
+      .creativity-art-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+        transition: transform 0.25s cubic-bezier(.4,1.5,.5,1), box-shadow 0.2s;
+        object-fit: cover;
+      }
+      .creativity-art-img-link:hover,
+      .creativity-art-img-link:focus {
+        z-index: 10;
+        transform: scale(1.12);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.28);
+      }
+      .creativity-art-img-link:hover .creativity-art-img,
+      .creativity-art-img-link:focus .creativity-art-img {
+        transform: scale(1.08);
+        box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+      }
+      .creativity-art-project-link .creativity-art-project-label {
+        display: none;
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        background: rgba(30,30,40,0.85);
+        color: #7ed321;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 0.5rem 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        pointer-events: none;
+        transition: opacity 0.2s;
+      }
+      .creativity-art-project-link:hover .creativity-art-project-label,
+      .creativity-art-project-link:focus .creativity-art-project-label {
+        display: block;
+      }
+      @media screen and (max-width: 600px) {
+        .creativity-art-flex {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .creativity-art-images {
+          flex-direction: column;
+          align-items: center;
+          gap: 1.2rem;
+          margin: 0 auto;
+        }
+        .creativity-art-flex > div:first-child {
+          padding-left: 0;
+          padding-right: 0;
+        }
+        .creativity-art-container {
+          padding-left: 1.2rem;
+          padding-right: 1.2rem;
+        }
       }
     </style>
   </main>
@@ -790,7 +887,10 @@
         contactSend: "Send",
         contactConfirm: "Message sent! Thank you.",
         footer: "© Yuval Malihi. All rights reserved.",
-        footerMail: "yuvalmalihi@gmail.com"
+        footerMail: "yuvalmalihi@gmail.com",
+        creativityArtTitle: "Creativity & Art",
+        creativityArtP1: "My passion for creativity began with my love for drawing. Art has always been a way for me to express new ideas and see the world differently. This creative drive naturally led me to explore new horizons, whether through digital illustration or building innovative solutions in technology.",
+        creativityArtP2: "Today, I channel that same creativity into coding and automation. I'm currently working on a project that automates actions on both Windows and Linux, making everyday tasks more efficient and freeing up time for more creative pursuits."
       },
       he: {
         nav: ["צור קשר", "עליי", "גלריה", "סרטונים", "HE/EN"],
@@ -821,7 +921,10 @@
         contactSend: "שלח",
         contactConfirm: "ההודעה נשלחה! תודה.",
         footer: "© יובל מליחי. כל הזכויות שמורות.",
-        footerMail: "yuvalmalihi@gmail.com"
+        footerMail: "yuvalmalihi@gmail.com",
+        creativityArtTitle: "יצירתיות ואמנות",
+        creativityArtP1: "התשוקה שלי ליצירתיות התחילה מהאהבה שלי לציור. האמנות תמיד הייתה עבורי דרך לבטא רעיונות חדשים ולראות את העולם בצורה שונה. הדחף היצירתי הזה הוביל אותי באופן טבעי לחקור אופקים חדשים, בין אם דרך איור דיגיטלי ובין אם בבניית פתרונות חדשניים בטכנולוגיה.",
+        creativityArtP2: "היום אני מנתב את אותה יצירתיות לקוד ואוטומציה. בימים אלו אני עובד על פרויקט שמבצע אוטומציה לפעולות ב-Windows ובלינוקס, מה שהופך משימות יומיומיות ליעילות יותר ומפנה לי זמן לעיסוקים יצירתיים נוספים."
       }
     };
     let isHebrew = false;
@@ -891,6 +994,13 @@
       const footerMail = document.querySelector('.footer-nav a');
       if (footer) footer.textContent = translations[lang].footer;
       if (footerMail) footerMail.textContent = translations[lang].footerMail;
+      // Creativity & Art Section
+      const creativityArtTitle = document.querySelector('#creativity-art h3');
+      const creativityArtP1 = document.querySelector('#creativity-art p:nth-of-type(1)');
+      const creativityArtP2 = document.querySelector('#creativity-art p:nth-of-type(2)');
+      if (creativityArtTitle) creativityArtTitle.textContent = translations[lang].creativityArtTitle;
+      if (creativityArtP1) creativityArtP1.textContent = translations[lang].creativityArtP1;
+      if (creativityArtP2) creativityArtP2.textContent = translations[lang].creativityArtP2;
       // Direction for Hebrew
       document.body.dir = isHebrew ? 'rtl' : 'ltr';
     }

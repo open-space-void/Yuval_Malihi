@@ -54,6 +54,19 @@
           transform: translateY(-20%) !important;
           margin-top: 10vh !important;
         }
+        .personal-info-section .personal-images-wrapper {
+          transform: scale(0.5);
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+        body[dir="ltr"] .personal-info-section .personal-images-wrapper {
+          transform-origin: top left;
+          margin-left: 8px !important;
+        }
+        body[dir="rtl"] .personal-info-section .personal-images-wrapper {
+          transform-origin: top right;
+          margin-right: 8px !important;
+        }
       }
     </style>
   </div>
